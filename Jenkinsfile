@@ -1,3 +1,5 @@
+currentBuild.displayName = "LeanJenkins#"+currentBuild.number
+
 pipeline{
 
     agent any
