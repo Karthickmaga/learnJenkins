@@ -16,8 +16,8 @@ pipeline{
                         parameters([
                             choice(
                                 choices: ['master', 'main', 'Test'], 
-                                name: 'Branch'
-                                                )
+                                name: 'Branch')])])
+                                        }            
                                 }
                                 
               }
