@@ -3,12 +3,19 @@ currentBuild.displayName = "LeanJenkins#"+currentBuild.number
 pipeline{
 
     agent any
-    properties([parameters([choice(choices: 'master\nmain\nTest1', description: '', name: 'Branch')])])
-    environment{
+        environment{
   
         PATH = "/opt/maven/apache-maven-3.6.3/bin:$PATH"
     }
     stages{
+        
+        stage("Setting Parameter){
+              steps{
+                  
+                  properties([parameters([choice(choices: 'master\nmain\nTest1', description: '', name: 'Branch')])])
+
+              }
+              }
         stage("SCM Checkout")
         
         {
