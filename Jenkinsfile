@@ -10,11 +10,16 @@ pipeline{
     stages{
         
         stage("Setting Parameter){
-              steps{
-                  
-                  properties([parameters([choice(choices: 'master\nmain\nTest1', description: '', name: 'Branch')])])
-
-              }
+                             steps{
+                                        script { 
+                    properties([
+                        parameters([
+                            choice(
+                                choices: ['master', 'main', 'Test'], 
+                                name: 'Branch'
+                                                )
+                                }
+                                
               }
         stage("SCM Checkout")
         
