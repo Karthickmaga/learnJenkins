@@ -27,7 +27,7 @@ pipeline{
             
             steps{
                 echo "Selected Branch ${params.Branch}"
-                checkout([$class: 'GitSCM', branches: [[name: '*/'+${params.Branch}]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ValaxyTech/hello-world.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/'${params.Branch}]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ValaxyTech/hello-world.git']]])
             }
             
         }
